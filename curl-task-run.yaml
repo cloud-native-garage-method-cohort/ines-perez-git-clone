@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  name: curl-task
+spec:
+  params:
+    - name: curl
+      value: "https://dog-facts-api.herokuapp.com/api/v1/resources/dogs?number=2"
+    - name: options
+      value:
+       - "-i"
+  taskRef:
+    name: curl
